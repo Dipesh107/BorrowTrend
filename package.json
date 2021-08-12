@@ -1,0 +1,21 @@
+{
+  "name": "borrowtrend",
+  "version": "1.0.0",
+  "description": "An online rental services with dailky/monthly/yearly charges and shopping options too.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Ecommerce",
+    "shooping",
+    "fashion"
+  ],
+  "author": "Dipesh Patil Gokarna Patil",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  }
+}
