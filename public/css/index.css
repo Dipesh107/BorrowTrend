@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300&family=Playfair+Display+SC:wght@700&family=Ubuntu:wght@300&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Ubuntu', serif;
+}
+
+#header {
+  height: 100vh;
+  background-image: url(/images/background.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.container{
+  margin-right: 100px;
+  margin-left: 100px;
+}
+
+.logo{
+  margin-top: 30px;
+  width: 15%;
+  border-radius: 50%;
+  font-size: 3rem;
+}
+
+.header-text {
+  max-width: 350px;
+  margin-top: 90px;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+.square {
+  height: 12px;
+  width: 12px;
+  display: inline-block;
+  margin: 15px 0;
+  background-color: #f67c92;
+}
+
+.common-btn {
+  margin: 20px 0;
+  padding: 18px 40px;
+  outline: none;
+  background: transparent;
+  border: 2px solid #f67c92;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.common-btn:hover {
+  color: white;
+  background-color: #f67c92;
+}
+
+p {
+  font-size: 15px;
+  line-height: 18px;
+  color: #777;
+}
+
+.header-text button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.line {
+  line-height: 8px;
+}
+
+.line-1 {
+  width: 15px;
+  height: 15px;
+  background: #f67c92;
+  display: inline-block;
+  margin: 2px;
+}
+
+.line-2 {
+  width: 80px;
+  height: 1px;
+  background: #f67c92;
+  display: inline-block;
+  margin: 2px;
+}
+
+.line-3 {
+  width: 60px;
+  height: 1px;
+  background: #f67c92;
+  display: inline-block;
+  margin: 2px;
+}
+
+#sidenav {
+  width: 250px;
+  height: 100vh;
+  background: #f67c92;
+  z-index: 2;
+  right: -250px;
+  top: 0;
+  position: fixed;
+  transition: 0.5s;
+}
+
+nav ul li {
+  list-style: none;
+  margin: 50px 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+#menuBtn {
+  width: 50px;
+  right: 65px;
+  position: fixed;
+  top: 35px;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.catrgories {
+  margin-top: 15px;
+}
+
+.cat-head {
+  text-align: center;
+  margin: 50px auto;
+  color: #555;
+  position: relative;
+  line-height: 80px;
+}
+
+.cat-head::after,
+.title::after {
+  content: '';
+  background: #ff523b;
+  width: 80px;
+  height: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  border-radius: 5px;
+  transform: translateX(-50%);
+}
+
+.cat-head::after {
+  width: 160px;
+}
+
+.row {
+  width: auto;
+}
+
+/* products section */
+
+.products {
+  margin: 70px 0;
+}
+
+.small-container {
+  max-width: 1080px;
+  margin: auto;
+  padding-left: 60px;
+  align-items: center;
+}
+
+.col-4 {
+  display: inline-block;
+  flex-basis: 25%;
+  padding: 20px;
+  margin-bottom: 50px;
+  min-width: 200px;
+  transition: transform 0.5s;
+}
+
+.title {
+  text-align: center;
+  margin: 0 auto 60px;
+  position: relative;
+  line-height: 60px;
+  color: #555;
+}
+
+.col-4 h4 {
+  color: #555;
+  font-weight: normal;
+}
+
+.col-4 p {
+  font-size: 14px;
+}
+
+.rating .fa {
+  color: #f67c92;
+}
+
+.col-4:hover {
+  transform: translateY(-10px);
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12);
+  margin: 100px auto;
+  background: #fff;
+  border-radius: 5px;
+}
+
+/* offer section */
+
+.offer {
+  background: radial-gradient(#fff, #f67c92);
+  margin-top: 80px;
+  padding: 30px;
+}
+
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.col-2 , 
+.offer-img {
+  padding: 30px 20px;
+}
+
+.col-2 p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.col-2 h1 {
+  font-weight: 900;
+  font-size: 38px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.offer-img {
+  width: 80%;
+}
+
+small {
+  color: #555;
+}
+
+.btn {
+  padding: 8px 30px;
+  margin: 30px 0;
+  border-radius: 30px;
+  color: #fff;
+  transition: 0.5s;
+  background: #ff523b;
+  position: absolute;
+  text-decoration: none;
+}
+
+.btn:hover {
+  color: #fff;
+  background: #000;
+}

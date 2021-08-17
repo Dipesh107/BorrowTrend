@@ -14,6 +14,9 @@ app.get("/", function (req, res) {
   res.render('main');
 });
 
+app.get("/home", function (req, res) {
+  res.render('index');
+});
 
 app.listen(port, function (res, req) {
   console.log("Server Running on Port " + port);

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/index.css">
+  <title>Navigation</title>
+</head>
+
+<body>
+  <nav id="sidenav">
+    <ul>
+      <li><a href="#">HOME</a></li>
+      <li><a href="#">CLOTHES</a></li>
+      <li><a href="#">JEWELLERY</a></li>
+      <li><a href="#">SHOES</a></li>
+      <li><a href="#">CONTACT</a></li>
+    </ul>
+  </nav>
+  <img src="images/menu.png" alt="menu" id="menuBtn">
+
+  <script>
+    var menubtn = document.getElementById("menuBtn");
+    var sidenav = document.getElementById("sidenav");
+    sidenav.style.right = "-250px"
+    menubtn.onclick = function () {
+      if (sidenav.style.right == "-250px") {
+        sidenav.style.right = "0"
+      }
+      else {
+        sidenav.style.right = "-250px"
+      }
+    }
+  </script>
+</body>
+
+</html>
