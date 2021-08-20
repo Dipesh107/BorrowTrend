@@ -18,6 +18,26 @@ app.get("/home", function (req, res) {
   res.render('index');
 });
 
+app.get("/clothes", function (req, res) {
+  res.render('products/clothes');
+});
+
+app.get("/jewellery", function (req, res) {
+  res.render('products/jewellery');
+});
+
+app.get("/shoes", function (req, res) {
+  res.render('products/shoes');
+});
+
+app.get("/account", function (req, res) {
+  res.render('account');
+});
+
+app.get("/contact", function (req, res) {
+  res.render('contact')
+});
+
 app.listen(port, function (res, req) {
   console.log("Server Running on Port " + port);
 });

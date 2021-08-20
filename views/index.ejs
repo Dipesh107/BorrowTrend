@@ -16,7 +16,7 @@
   <!-- Header Section -->
   <section id="header">
     <div class="container">
-      <img src="images/logo.jpg" class="logo">
+      <img src="images/apng1.png" class="logo">
       <div class="header-text">
         <h1>Rent Wear Repeat</h1>
         <span class="square"></span>
@@ -31,7 +31,6 @@
           <span class="line-2"></span><br>
           <span class="line-3"></span>
         </div>
-
       </div>
     </div>
   </section>
@@ -242,117 +241,34 @@
     </div>
 
     <!-- testimonial section -->
+    <%- include('includes/testimonial') %>
 
-    <div class="testimonial">
-      <div class="small-container">
-        <div class="row3">
-          <div class="col-3-1">
-            <i class="fa fa-quote-left quote-icon"></i>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis odit tempora rerum dignissimos
-              numquam cum ullam id, error, nobis delectus sapiente sit nisi esse facere mollitia. Omnis est quam
-              accusamus?</p>
-            <div class="rating">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-            </div>
-            <img src="images/buy-1.jpg" alt="testimonial-1-user">
-            <h3>User 1</h3>
-          </div>
-          <div class="col-3-1">
-            <i class="fa fa-quote-left quote-icon"></i>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis odit tempora rerum dignissimos
-              numquam cum ullam id, error, nobis delectus sapiente sit nisi esse facere mollitia. Omnis est quam
-              accusamus?</p>
-            <div class="rating">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star-half-alt"></i>
-            </div>
-            <img src="images/buy-1.jpg" alt="testimonial-1-user">
-            <h3>User 1</h3>
-          </div>
-          <div class="col-3-1">
-            <i class="fa fa-quote-left quote-icon"></i>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis odit tempora rerum dignissimos
-              numquam cum ullam id, error, nobis delectus sapiente sit nisi esse facere mollitia. Omnis est quam
-              accusamus?</p>
-            <div class="rating">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star-o"></i>
-            </div>
-            <img src="images/buy-1.jpg" alt="testimonial-1-user">
-            <h3>User 1</h3>
-          </div>
-        </div>
-      </div>
-    </div>
+      <!-- footer -->
+      <%- include('includes/footer') %>
 
-    <!-- footer -->
-    <div class="footer">
-      <div class="small-container">
-        <div class="row3">
-          <div class="footer-col-2">
-            <h3>Download Our App</h3>
-            <p>Download Our App For Android and IOS Devices.</p>
-          </div>
-          <div class="footer-col-2">
-            <img src="images/logo-white.png" alt="">
-            <p>Our Purpose is to Sustainably Make Pleasure and Rent Things to save mone for Our coustomers and Help them
-              wear different things.</p>
-          </div>
-          <div class="footer-col-2">
-            <h3>Useful Links</h3>
-            <ul>
-              <li>Coupons</li>
-              <li>Best Offers</li>
-              <li>Return Policy</li>
-              <li>Customer Satisfaction</li>
-            </ul>
-          </div>
-          <div class="footer-col-2">
-            <h3>Socials</h3>
-            <ul>
-              <li>Instagram</li>
-              <li>Twitter</li>
-              <li>LinkedIn</li>
-              <li>Github</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+        <script>
+          var i = 0;
+          var images = [];
+          var time = 3000;
 
+          images[0] = "images/carso1.webp"
+          images[1] = "images/img2.webp"
+          images[2] = "images/img3.webp"
+          images[3] = "images/carso2.jpg"
 
-    <script>
-      var i = 0;
-      var images = [];
-      var time = 3000;
+          function changeImage() {
+            document.slide.src = images[i];
+            if (i < images.length == 1) {
+              i++;
+            } else {
+              i = 0;
+            }
 
-      images[0] = "images/carso1.webp"
-      images[1] = "images/carso2.jpg"
-      images[2] = "images/carso3.jpg"
+            setTimeout("changeImage()", time);
+          }
 
-      function changeImage() {
-        document.slide.src = images[i];
-        if (i < images.length == 1) {
-          i++;
-        } else {
-          i = 0;
-        }
-
-        setTimeout("changeImage()", time);
-      }
-
-      window.onload = changeImage;
-    </script>
+          window.onload = changeImage;
+        </script>
 </body>
 
 </html>
