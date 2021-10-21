@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Borrow Trend | Shoes <%= name %>
+  </title>
+
+  <style>
+    .container {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: row;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .image-div {
+      margin: 20px 40px;
+    }
+
+    .image-div>img {
+      width: 700px;
+      height: 700px;
+    }
+
+    .description-div {
+      width: 80%;
+      margin-top: 30px;
+    }
+
+    .description-div>h2 {
+      margin: 20px auto;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .newarrival {
+      background: green;
+      width: 50px;
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .col-md-7 h2 {
+      color: #555;
+    }
+
+    .price {
+      color: #FE980F;
+      font-size: 26px;
+      font-weight: bold;
+      padding-top: 20px;
+    }
+
+    input {
+      border: 1px solid #ccc;
+      font-weight: bold;
+      height: 33px;
+      text-align: center;
+      width: 30px;
+    }
+
+    .cart-btn {
+      padding: 15px 25px;
+      background-color: #2b2c3d;
+      cursor: pointer;
+      transition: 0.3s opacity;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 15px auto;
+    }
+
+    .cart-btn:hover {
+      opacity: 0.8;
+    }
+
+    .cart-btn>a {
+      text-decoration: none !important;
+      text-transform: capitalize !important;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .go-to-cart {
+      background-color: transparent;
+      border: 2px solid #2b2c3d;
+      outline: #2b2c3d;
+      transition: 0.5s ease;
+    }
+
+    .go-to-cart:hover {
+      background-color: #2b2c3d;
+      outline: #fff;
+      border: 2px solid #fff;
+    }
+
+    .go-to-cart>a {
+      color: #000;
+    }
+
+    .go-to-cart>a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="image-div">
+      <img src=<%=imageUrl %> alt=<%= name %>>
+    </div>
+    <div class="description-div">
+      <p class="newarrival">NEW</p>
+      <h2>
+        <%= name %>
+      </h2>
+      <p class="price">₹ <%= price %>
+      </p>
+      <p><b>Stock Availability:</b>
+        <%= counterInStock %>
+      </p>
+      <p><b>Condition:</b> New</p>
+      <p><b>Product Details :</b>
+        <%= description %>
+      </p>
+      <label>Quantity:</label>
+      <input type="text" value="1">
+
+      <button type="button" class="cart-btn"><a href="/addShoe/<%= id %>">Add to cart</a></button>
+      <button type="button" class="cart-btn go-to-cart"><a href="/">Go Home</a></button>
+    </div>
+  </div>
+
+</body>
+
+</html>

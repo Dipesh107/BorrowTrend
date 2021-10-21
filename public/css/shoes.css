@@ -1,0 +1,256 @@
+.head-section {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+}
+
+.head-section-image {
+  width: 200px;
+  margin: 10px 20px;
+  filter: invert(100%);
+}
+
+.hero-section {
+  background: url(/images/img4.jpg);
+  height: 100%;
+  width: 95%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  backface-visibility: visible;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 30px auto;
+  cursor: pointer;
+}
+
+.clothes-image>img {
+  height: 600px;
+  margin: 30px 30px 0;
+}
+
+.image-1 {
+  float: left;
+}
+
+.image-2 {
+  float: right;
+  width: 70%;
+  height: 550px;
+}
+
+.companies-list-text {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin: 40px auto;
+  position: relative;
+}
+
+.companies-list-text::after {
+  content: '';
+  background: #ff523b;
+  width: 230px;
+  height: 5px;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  border-radius: 5px;
+  transform: translateX(-50%);
+}
+
+.companies {
+  display: flex;
+  flex-direction: column;
+}
+
+.discounts {
+  margin: 20px auto;
+  text-align: center;
+  display: block;
+}
+
+.offer-img {
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.rent-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.rent-section-div1 {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 10px auto;
+}
+
+.rent-section-textDiv {
+  text-align: center;
+  justify-content: center;
+}
+
+.rent-section-textDiv>p {
+  margin: 20px auto;
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+
+.rent-section-textDiv>h2 {
+  margin: 20px auto;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.rent-section-textDiv>button {
+  padding: 15px 30px;
+  background-color: #2b2c3d;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s opacity;
+  margin: 20px auto;
+}
+
+.rent-section-textDiv>button:hover {
+  opacity: 0.8;
+}
+
+.rent-section-textDiv>button>a {
+  text-decoration: none !important;
+  text-transform: capitalize !important;
+  color: #fff;
+  font-size: 18px;
+}
+
+.view-more-btn {
+  padding: 15px 30px;
+  background-color: #2b2c3d;
+  display: block;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s opacity;
+  margin: 30px auto 10px;
+}
+
+.view-more-btn:hover {
+  opacity: 0.8;
+}
+
+.view-more-btn>a {
+  text-decoration: none !important;
+  text-transform: capitalize !important;
+  color: #fff;
+  font-size: 18px;
+}
+
+.rent-section-imagesDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.rent-section-imagesDiv>a {
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+  text-align: center;
+}
+
+.rent-section-imagesDiv>a>img {
+  width: 300px;
+  height: 442px;
+}
+
+/* offers section begins here */
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.card {
+  width: 300px;
+  height: 350px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  margin: 0 20px 20px 20px;
+  cursor: pointer;
+  transition: transform 0.5s;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.card>a {
+  text-decoration: none;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.companies {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 90%;
+  margin: auto;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+}
+
+.companies>img {
+  width: 100px;
+  height: 70px;
+}
+
+.companies>img:nth-child(3) {
+  height: 50px;
+}
+
+.text>p:first-child {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.card-section2 {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.discount-images {
+  display: flex;
+  flex-direction: row;
+}
+
+.discount-images>img {
+  margin: 10px auto;
+  width: 250px;
+  transition: transform 0.5s;
+  cursor: pointer;
+}
+
+.discount-images>img:hover {
+  transform: translateY(-10px);
+}

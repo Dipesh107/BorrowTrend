@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/shoes.css">
+  <title>The Borrow Trend | Jewellery</title>
+</head>
+
+<body>
+  <div class="head-section">
+    <div>
+      <img class="head-section-image" src="images/logo-black-300.gif" alt="The Borrow Trend">
+    </div>
+    <div>
+      <!-- Navigation menu -->
+      <%- include('includes/nav') %>
+    </div>
+  </div>
+
+  <div class="hero-section">
+    <div class="clothes-image">
+      <img class="image-1" src="images/clothes.png" alt="demo-1">
+    </div>
+    <div class="clothes-image">
+      <img class="image-2" src="images/clothes2.png" alt="demo-2">
+    </div>
+  </div>
+
+  <div class="discounts">
+    <img src="images/icici.png" style="width: 100%;" alt="icici-discount">
+  </div>
+
+  <!-- Features Section -->
+  <%- include('includes/features') %>
+
+    <!-- Renting Section -->
+    <div class="rent-section">
+      <div class="rent-section-div1">
+        <div class="rent-section-textDiv">
+          <p>New Arrivals</p>
+          <h2>The Latest Brands Desings are Here!</h2>
+          <p>Get Your Looks more Obsesive with Jewelleries!</p>
+          <button><a href="/jewelleryproducts">Rent Now / Buy Now</a></button>
+        </div>
+        <div class="rent-section-imagesDiv">
+          <a href="/jewelleryproducts">
+            <img
+              src="https://rukminim1.flixcart.com/image/714/857/jwqpocw0/jewellery-set/v/2/p/cjds0101-candy-jewellers-original-imafh24wapks6v9e.jpeg?q=50"
+              alt="jewellery">
+            <p>Complete Gold Set</p>
+            <p>Rs. 50,000.00</p>
+          </a>
+          <a href="/jewelleryproducts">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZi4NxugYoWXq1xEbzocxgvhmiqXG-qOpnk9OBh3yseQ8efprIRY2Jfo36lmSJl9yuqog&usqp=CAU"
+              alt="jewellery">
+            <p>Diamond Cut Necklase</p>
+            <p>Rs, 27,000.00</p>
+          </a>
+          <a href="/jewelleryproducts">
+            <img src="http://www.hazoorilaljewellers.com/wp-content/uploads/2020/06/31-min.jpg" alt="jewellery">
+            <p>Pearl Necklase with Gold Finish</p>
+            <p>Rs. 30,000.00</p>
+          </a>
+          <a href="/jewelleryproducts">
+            <img src="https://www.hazoorilaljewellers.com/wp-content/uploads/2020/06/19-min.jpg" alt="jewellery">
+            <p>Premium Crystal White Pearl Necklase</p>
+            <p>Rs. 40,000.00</p>
+          </a>
+          <a href="/jewelleryproducts">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnocaRebIlvYfOnmWIw4oyedEGW847kGWIng&usqp=CAU"
+              alt="jewellery">
+            <p>Gold Set of NEcklase and Earrings </p>
+            <p>Rs. 25,000.00</p>
+          </a>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- Festive Offers Card -->
+    <div>
+      <img class="offer-img" src="images/products-img/product-desp1.png" alt="best offers">
+      <div class="cards">
+        <div class="card">
+          <a href="/jewelleryproducts">
+            <div>
+              <img class="image" src="images/products-img/rent-jewellery/jewell.jfif" alt="img1">
+            </div>
+            <div class="text">
+              <p>Pearl Necklase with Earrings Set</p>
+              <p>Under ₹28,999/-</p>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="/jewelleryproducts">
+            <div>
+              <img class="image" src="images/products-img/rent-jewellery/jewell2.jfif" alt="img1">
+            </div>
+            <div class="text">
+              <p>Diamond Jewellery Set</p>
+              <p>Under ₹30,999/-</p>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="/jewelleryproducts">
+            <div>
+              <img class="image" src="images/products-img/rent-jewellery/jewell3.jfif" alt="img1">
+            </div>
+            <div class="text">
+              <p>Pearl Diamond Designer Necklase</p>
+              <p>Under ₹40,999/-</p>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="/jewelleryproducts">
+            <div>
+              <img class="image" src="images/products-img/rent-jewellery/jewell4.jfif" alt="img1">
+            </div>
+            <div class="text">
+              <p>Gold Plated Dulhan Set</p>
+              <p>Under ₹30,999/-</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <button class="view-more-btn"><a href="/jewelleryproducts">View More Products</a></button>
+
+
+
+    <!-- testimonial section -->
+    <%- include('includes/testimonial') %>
+
+      <!-- footer -->
+      <%- include('includes/footer') %>
+</body>
+
+</html>

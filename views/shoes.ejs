@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/shoes.css">
+  <title>The Borrow Trend | Shoes</title>
+</head>
+
+<body>
+  <div class="head-section">
+    <div>
+      <img class="head-section-image" src="images/logo-black-300.gif" alt="The Borrow Trend">
+    </div>
+    <div>
+      <!-- Navigation menu -->
+      <%- include('includes/nav') %>
+    </div>
+  </div>
+
+  <div class="hero-section">
+    <div class="clothes-image">
+      <img class="image-1" src="images/clothes.png" alt="demo-1">
+    </div>
+    <div class="clothes-image">
+      <img class="image-2" src="images/clothes2.png" alt="demo-2">
+    </div>
+  </div>
+
+  <div class="companies">
+    <img src="images/brands/adidas.png" alt="">
+    <img src="images/brands/nike.png" alt="">
+    <img src="images/brands/bata.png" alt="">
+    <img src="images/brands/puma.png" alt="">
+    <img src="images/brands/wrogn.png" alt="">
+    <img src="images/brands/reebok.png" alt="">
+  </div>
+
+  <div class="discounts">
+    <img src="images/icici.png" style="width: 100%;" alt="icici-discount">
+  </div>
+
+  <!-- Features Section -->
+  <%- include('includes/features') %>
+
+    <!-- Renting Section -->
+    <div class="rent-section">
+      <div class="rent-section-div1">
+        <div class="rent-section-textDiv">
+          <p>New Arrivals</p>
+          <h2>The Latest Brands are Here!</h2>
+          <p>Get Spring ready with some new Collections of Shoes</p>
+          <button><a href="/shoesallproducts">Rent Now / Buy Now</a></button>
+        </div>
+        <div class="rent-section-imagesDiv">
+          <a href="/shoesallproducts">
+            <img src="images/products-img/rent-shoes/nike.jfif" alt="shoes">
+            <p>Nike AirForce (White)</p>
+            <p>Rs. 5,000.00</p>
+          </a>
+          <a href="/shoesallproducts">
+            <img src="images/products-img/rent-shoes/adidas.jpg" alt="shoes">
+            <p>Domain Adidas NS2 Sneakers</p>
+            <p>Rs, 2,700.00</p>
+          </a>
+          <a href="/shoesallproducts">
+            <img src="images/products-img/rent-shoes/nike2.png" alt="shoes">
+            <p>Nike Air Max Trainer</p>
+            <p>Rs. 2,200.00</p>
+          </a>
+          <a href="/shoesallproducts">
+            <img src="images/products-img/rent-shoes/puma.jpeg" alt="shoes">
+            <p>Puma Premium Crystal White Shoes</p>
+            <p>Rs. 3,000.00</p>
+          </a>
+          <a href="/shoesallproducts">
+            <img src="images/products-img/rent-shoes/wrogn.jpeg" alt="shoes">
+            <p>Sneaker for Men</p>
+            <p>Rs. 1,200.00</p>
+          </a>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- Festive Offers Card -->
+    <div>
+      <img class="offer-img" src="images/products-img/product-desp1.png" alt="best offers">
+      <div class="cards">
+        <div class="card">
+          <a href="/shoesallproducts">
+            <div>
+              <img class="image" src="images/buy-2.jpg" alt="img1">
+            </div>
+            <div class="companies">
+              <img src="images/brands/nike.png" alt="">
+              <img src="images/brands/adidas.png" alt="">
+            </div>
+            <div class="text">
+              <p>Best Sneakers For Men</p>
+              <p>Under ₹899/-</p>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="/shoesallproducts">
+            <div>
+              <img class="image" src="images/buy-2.jpg" alt="img1">
+            </div>
+            <div class="companies">
+              <img src="images/brands/nike.png" alt="">
+              <img src="images/brands/adidas.png" alt="">
+            </div>
+            <div class="text">
+              <p>Best Sneakers For Men</p>
+              <p>Under ₹699/-</p>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="/shoesallproducts">
+            <div>
+              <img class="image" src="images/buy-2.jpg" alt="img1">
+            </div>
+            <div class="companies">
+              <img src="images/brands/nike.png" alt="">
+              <img src="images/brands/adidas.png" alt="">
+            </div>
+            <div class="text">
+              <p>Best Sneakers For Men</p>
+              <p>Under ₹699/-</p>
+            </div>
+          </a>
+        </div>
+        <div class="card">
+          <a href="/shoesallproducts">
+            <div>
+              <img class="image" src="images/buy-2.jpg" alt="img1">
+            </div>
+            <div class="companies">
+              <img src="images/brands/nike.png" alt="">
+              <img src="images/brands/adidas.png" alt="">
+            </div>
+            <div class="text">
+              <p>Best Sneakers For Men</p>
+              <p>Under ₹699/-</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <button class="view-more-btn"><a href="/shoesallproducts">View More Products</a></button>
+
+
+
+    <!-- testimonial section -->
+    <%- include('includes/testimonial') %>
+
+      <!-- footer -->
+      <%- include('includes/footer') %>
+</body>
+
+</html>

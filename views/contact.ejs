@@ -40,34 +40,36 @@
           <li><a href="#"><img src="images/contact-images/5.png"></a></li>
         </ul>
       </div>
-      <div class="contactForm">
-        <h2>Send a message</h2>
-        <div class="formBox">
-          <div class="inputBox w50">
-            <input type="text" required>
-            <span>First Name</span>
-          </div>
-          <div class="inputBox w50">
-            <input type="text" required>
-            <span>Last Name</span>
-          </div>
-          <div class="inputBox w50">
-            <input type="text" required>
-            <span>Email Address</span>
-          </div>
-          <div class="inputBox w50">
-            <input type="text" required>
-            <span>Mobile Number</span>
-          </div>
-          <div class="inputBox w100">
-            <textarea required></textarea>
-            <span>Write your message here...</span>
-          </div>
-          <div class="inputBox w100">
-            <input type="submit" value="Send">
+      <form action="/contact" method="POST">
+        <div class="contactForm">
+          <h2>Send a message</h2>
+          <div class="formBox">
+            <div class="inputBox w50">
+              <input type="text" name="username" required>
+              <span>First Name</span>
+            </div>
+            <div class="inputBox w50">
+              <input type="text" nam required>
+              <span>Last Name</span>
+            </div>
+            <div class="inputBox w50">
+              <input type="text" name="email" required>
+              <span>Email Address</span>
+            </div>
+            <div class="inputBox w50">
+              <input type="text" required>
+              <span>Mobile Number</span>
+            </div>
+            <div class="inputBox w100">
+              <textarea required name="query"></textarea>
+              <span>Write your message here...</span>
+            </div>
+            <div class="inputBox w100">
+              <input type="submit" value="Send">
+            </div>
           </div>
         </div>
-      </div>
+      </form>
     </div>
   </section>
 

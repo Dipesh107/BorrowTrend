@@ -6,15 +6,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/index.css">
+  <script src="https://use.fontawesome.com/9d4372f9ce.js"></script>
   <title>Navigation</title>
 </head>
 
 <body>
+  <!-- <button class="login-btn"><i class="fas fa-cart"></i><a href="#">Cart</a></button> -->
+  <button class="login-btn gotocart-btn"><a href="/cart/checkout">My Cart(
+      <% if(typeof cart !=="undefined" ) {%>
+        <%= cart.length %>
+          <% } else {%>
+            0
+            <%}%>
+              )
+    </a></button>
+  <button class="login-btn"><a href="/login">SIGN IN</a></button>
   <nav id="sidenav">
     <ul>
       <li><a class="nav-a" href="/home">HOME</a></li>
       <li><a class="nav-a" href="/clothes">CLOTHES</a></li>
-      <li><a class="nav-a" href="/jewwllery">JEWELLERY</a></li>
+      <li><a class="nav-a" href="/jewellery">JEWELLERY</a></li>
       <li><a class="nav-a" href="/shoes">SHOES</a></li>
       <li><a class="nav-a" href="/contact">CONTACT</a></li>
       <li><a class="nav-a" href="/account">ACCOUNT</a></li>

@@ -1,0 +1,71 @@
+.head-section {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+}
+
+.head-section-image {
+  width: 200px;
+  margin: 10px 20px;
+  filter: invert(100%);
+}
+
+.hero-section {
+  background: url(/images/img4.jpg);
+  height: 100%;
+  width: 95%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  backface-visibility: visible;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 30px auto;
+  cursor: pointer;
+}
+
+.clothes-image > img {
+  height: 600px;
+  margin: 30px 30px 0;
+}
+
+.image-1 {
+  float: left;
+}
+.image-2 {
+  float: right;
+  width: 70%;
+  height: 550px;
+}
+
+.companies-list-text {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin: 40px auto;
+  position: relative;
+}
+
+.companies-list-text::after {
+  content: '';
+  background: #ff523b;
+  width: 230px;
+  height: 5px;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  border-radius: 5px;
+  transform: translateX(-50%);
+}
+
+.companies {
+  display: flex;
+  flex-direction: column;
+}
+
+.discounts {
+  margin: 20px auto;
+  text-align: center;
+  display: block;
+}

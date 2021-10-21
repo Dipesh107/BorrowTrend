@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/clothproductdetails.css">
+  <title>The Borrow Trend | Jewellery Products</title>
+</head>
+
+<body>
+  <div class="head-section">
+    <div>
+      <img class="head-section-image" src="images/logo-black-300.gif" alt="The Borrow Trend">
+    </div>
+    <div>
+      <!-- Navigation menu -->
+      <%- include('includes/nav') %>
+    </div>
+  </div>
+
+  <h1 class="title">All Featured Products</h1>
+
+  <div class="cards-section">
+    <%jewellerys.forEach(function(jewellery){%>
+      <div class="card">
+        <img class="image" src=<%=jewellery.imageUrl %> alt="">
+        <p class="name">
+          <%= jewellery.name %>
+        </p>
+        <p class="desp">
+          <%= jewellery.description.substring(0, 50) %>
+        </p>
+        <p class="price">
+          Rs. <%= jewellery.price %>
+        </p>
+        <button class="product-btn"><a href="/jewelleryproducts/<%= jewellery._id %>">View Product</a></button>
+      </div>
+      <%});%>
+  </div>
+
+  <button class="product-btn home-btn"><a href="/">Go Home</a></button>
+
+  <div>
+    <%- include('includes/footer') %>
+  </div>
+
+</body>
+
+</html>

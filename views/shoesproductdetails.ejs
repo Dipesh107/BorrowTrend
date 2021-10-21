@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/clothproductdetails.css">
+  <title>The Borrow Trend | Shoes Products</title>
+</head>
+
+<body>
+  <div class="head-section">
+    <div>
+      <img class="head-section-image" src="images/logo-black-300.gif" alt="The Borrow Trend">
+    </div>
+    <div>
+      <!-- Navigation menu -->
+      <%- include('includes/nav') %>
+    </div>
+  </div>
+
+  <h1 class="title">All Featured Products</h1>
+
+  <div class="cards-section">
+    <%shoes.forEach(function(shoe){%>
+      <div class="card">
+        <img class="image" src=<%=shoe.imageUrl %> alt="">
+        <p class="name">
+          <%= shoe.name %>
+        </p>
+        <p class="desp">
+          <%= shoe.description.substring(0, 50) %>
+        </p>
+        <p class="price">
+          Rs. <%= shoe.price %>
+        </p>
+        <button class="product-btn"><a href="/shoesallproducts/<%= shoe._id %>">View Product</a></button>
+      </div>
+      <%});%>
+  </div>
+
+  <button class="product-btn home-btn"><a href="/">Go Home</a></button>
+
+  <div>
+    <%- include('includes/footer') %>
+  </div>
+
+</body>
+
+</html>
