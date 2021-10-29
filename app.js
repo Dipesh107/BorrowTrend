@@ -1,4 +1,5 @@
 //jshint esversion:6
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const mongoose = require("mongoose");
@@ -7,6 +8,12 @@ const bodyParser = require('body-parser');
 const LocalStrategy = require("passport-local");
 const passportLocalMongoose = require("passport-local-mongoose");
 const ejs = require('ejs');
+const Razorpay = require('razorpay');
+
+const razorpay = new Razorpay({
+  key_id: process.env.RAZORPAY_ID,
+  key_secret: process.env.RAZORPAY_SECRET,
+})
 
 // Modules and Datas imports
 
@@ -116,7 +123,7 @@ app.get("/clothallproducts/:id", function (req, res) {
   });
 });
 
-app.get("/addClothe/:id", isLoggedIn, function (req, res) {
+app.get("/addClothe/:id", function (req, res) {
   const requestedId = req.params.id;
 
   Clothe.findOne({ _id: requestedId }, function (err, c) {
@@ -234,6 +241,25 @@ app.get("/addShoe/:id", isLoggedIn, function (req, res) {
   });
 });
 //Shoes All Routes Ends Here
+
+//Order Payments
+app.get("/checkout/:id", function (req, res) {
+
+  const requestedId = req.params.id;
+
+  Clothe.findOne({ _id: requestedId }, function (err, c) {
+    if (!err) {
+      res.render("payment", {
+        id: requestedId,
+        name: c.name,
+        imageUrl: c.imageUrl,
+        description: c.description,
+        price: c.price,
+        counterInStock: c.counterInStock,
+      });
+    };
+  });
+});
 
 // Contact Section Routes Here
 app.get("/contact", function (req, res) {
