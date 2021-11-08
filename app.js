@@ -11,8 +11,8 @@ const ejs = require('ejs');
 const Razorpay = require('razorpay');
 
 const razorpay = new Razorpay({
-  key_id: process.env.RAZORPAY_ID,
-  key_secret: process.env.RAZORPAY_SECRET,
+  key_id: process.env.KEYID,
+  key_secret: process.env.KEYSECRET,
 })
 
 // Modules and Datas imports
@@ -161,7 +161,7 @@ app.get("/jewelleryproducts/:id", function (req, res) {
 
   Jewellery.findOne({ _id: requestedId }, function (err, jewellery) {
     if (!err) {
-      res.render("preproduct", {
+      res.render("preproductjewellery", {
         id: requestedId,
         name: jewellery.name,
         imageUrl: jewellery.imageUrl,
@@ -173,7 +173,7 @@ app.get("/jewelleryproducts/:id", function (req, res) {
   });
 });
 
-app.get("/addJewellery/:id", isLoggedIn, function (req, res) {
+app.get("/addJewellery/:id", function (req, res) {
   const requestedId = req.params.id;
 
   Jewellery.findOne({ _id: requestedId }, function (err, c) {
@@ -212,7 +212,7 @@ app.get("/shoesallproducts/:id", function (req, res) {
 
   Shoe.findOne({ _id: requestedId }, function (err, shoe) {
     if (!err) {
-      res.render("preproduct", {
+      res.render("preproductshoes", {
         id: requestedId,
         name: shoe.name,
         imageUrl: shoe.imageUrl,
@@ -224,7 +224,7 @@ app.get("/shoesallproducts/:id", function (req, res) {
   });
 });
 
-app.get("/addShoe/:id", isLoggedIn, function (req, res) {
+app.get("/addShoe/:id", function (req, res) {
   const requestedId = req.params.id;
 
   Shoe.findOne({ _id: requestedId }, function (err, c) {
@@ -260,6 +260,32 @@ app.get("/checkout/:id", function (req, res) {
     };
   });
 });
+
+app.get("/paymentClothe/:id", function (req, res) {
+  res.render('payment')
+});
+
+app.post("/payment", function (req, res) {
+  let options = {
+    amount: 50000,
+    currency: "INR",
+  };
+
+  razorpay.orders.create(options, function (err, order) {
+    console.log(order);
+    res.json(order)
+  });
+});
+
+app.post("/is-order-completed", function (req, res) {
+  razorpay.payments.fetch(req.body.razorpay_payment_id).then((paymentDocument) => {
+    if (paymentDocument.status == "captured") {
+      res.redirect("/")
+    } else {
+      res.send("Error while processing payment.")
+    }
+  })
+})
 
 // Contact Section Routes Here
 app.get("/contact", function (req, res) {
