@@ -9,11 +9,20 @@ const LocalStrategy = require("passport-local");
 const passportLocalMongoose = require("passport-local-mongoose");
 const ejs = require('ejs');
 const Razorpay = require('razorpay');
+const nodemailer = require('nodemailer');
 
 const razorpay = new Razorpay({
   key_id: process.env.KEYID,
   key_secret: process.env.KEYSECRET,
-})
+});
+
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: "dipeshpatil013@gmail.com",
+    pass: "Dipesh@123"
+  }
+});
 
 // Modules and Datas imports
 
@@ -76,19 +85,13 @@ app.use(express.static("public"));
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.get('*', function (req, res, next) {
-  res.locals.cart = req.session.cart;
-  next();
-})
-
-
 // Routes Decleration
-app.get("/", function (req, res) {
-  res.render('index');
+app.get("/", isLoggedIn, function (req, res) {
+  res.render('index', { username: req.user.username });
 });
 
 app.get("/home", function (req, res) {
-  res.render('index');
+  res.render('index', { username: req.user.username });
 });
 
 // Clothes Section Routes Here
@@ -178,7 +181,7 @@ app.get("/addJewellery/:id", function (req, res) {
 
   Jewellery.findOne({ _id: requestedId }, function (err, c) {
     if (!err) {
-      res.render('addtocart', {
+      res.render('addtocartJewellery', {
         id: requestedId,
         name: c.name,
         qty: 1,
@@ -229,7 +232,7 @@ app.get("/addShoe/:id", function (req, res) {
 
   Shoe.findOne({ _id: requestedId }, function (err, c) {
     if (!err) {
-      res.render('addtocart', {
+      res.render('addtocartShoes', {
         id: requestedId,
         name: c.name,
         qty: 1,
@@ -243,37 +246,37 @@ app.get("/addShoe/:id", function (req, res) {
 //Shoes All Routes Ends Here
 
 //Order Payments
-app.get("/checkout/:id", function (req, res) {
+// app.get("/checkout/:id", function (req, res) {
 
-  const requestedId = req.params.id;
+//   const requestedId = req.params.id;
 
-  Clothe.findOne({ _id: requestedId }, function (err, c) {
-    if (!err) {
-      res.render("payment", {
-        id: requestedId,
-        name: c.name,
-        imageUrl: c.imageUrl,
-        description: c.description,
-        price: c.price,
-        counterInStock: c.counterInStock,
-      });
-    };
-  });
-});
+//   Clothe.findOne({ _id: requestedId }, function (err, c) {
+//     if (!err) {
+//       res.render("payment", {
+//         id: requestedId,
+//         name: c.name,
+//         imageUrl: c.imageUrl,
+//         description: c.description,
+//         price: c.price,
+//         counterInStock: c.counterInStock,
+//       });
+//     };
+//   });
+// });
 
-app.get("/paymentClothe/:id", function (req, res) {
+app.get("/payment", function (req, res) {
   res.render('payment')
 });
 
 app.post("/payment", function (req, res) {
   let options = {
-    amount: 50000,
+    amount: 89900,
     currency: "INR",
   };
 
   razorpay.orders.create(options, function (err, order) {
     console.log(order);
-    res.json(order)
+    res.json(order);
   });
 });
 
@@ -293,14 +296,29 @@ app.get("/contact", function (req, res) {
 });
 
 app.post("/contact", function (req, res) {
-  console.log(req.body.username)
-  console.log(req.body.email)
-  console.log(req.body.query)
-})
+
+  var output =  'Hi' + ' ' + req.body.username + ' ' + req.body.username2 + '.' + 'Thank you for contacting The Borrow Trend. We will look into the Query soon. Thank You!' +
+  'Your Query is as follows:' + ' ' + req.body.query;
+   
+var mailOptions = {
+  from: 'dipeshpatil013@gmail.com',
+  to: req.body.email,
+  subject: 'Sending mail from the Borrow Trend',
+  text: output
+}
+
+transporter.sendMail(mailOptions, function(err, info){
+  if(err) {
+    console.log(err)
+  } else {
+    console.log("Email sent " + info.response);
+  }
+});
+});
 //Contact Section Routes Ends Here
 
-app.get("/account", isLoggedIn, function (req, res) {
-  res.render('account');
+app.get("/account", function (req, res) {
+  res.render('account', { username: req.user.username, email: req.user.email, mobile: req.user.mobile, address: req.user.address });
 });
 
 app.get("/login", function (req, res) {
@@ -319,7 +337,9 @@ app.post("/login", passport.authenticate("local", {
 app.post("/register", async function (req, res) {
   User.register(new User({
     username: req.body.username,
-    email: req.body.email
+    email: req.body.email,
+    mobile: req.body.number,
+    address: req.body.address
   }), req.body.password, function (err, user) {
     if (err) {
       console.log(err);
@@ -338,6 +358,10 @@ function isLoggedIn(req, res, next) {
   res.redirect("/login");
 }
 
+app.get('/logout', function (req, res) {
+  req.logout();
+  res.redirect('/login');
+});
 
 // Listening to The Server 
 const port = process.env.PORT || 3000;

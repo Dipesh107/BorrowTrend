@@ -5,18 +5,105 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/dash-style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>The Borrow Trend | Accounts</title>
 </head>
 
 <body>
-  <!-- Navigation menu -->
-  <%- include('includes/nav') %>
-    <div class="dashboard">
-      <h1>Accounts Section</h1>
+  <div class="container">
+    <div class="navigation">
+      <ul>
+        <li>
+          <a href="#">
+            <span class="icon"></span>
+            <span class="title">
+              <h2>Welcome! <span style="text-transform: capitalize;"><%= username%></span>
+              </h2>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="/">
+            <span class="icon"><i class="fa fa-home icons"></i></span>
+            <span class="title">My Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="/account">
+            <span class="icon"><i class="fa fa-user icons"></i></span>
+            <span class="title">My Profile</span>
+          </a>
+        </li>
+        <li>
+          <a href="/logout">
+            <span class="icon"><i class="fa fa-sign-out icons"></i></span>
+            <span class="title">Sign-out</span>
+          </a>
+        </li>
+      </ul>
     </div>
-
-    <!-- Navigation menu -->
-    <%- include('includes/footer') %>
+    <div class="main">
+      <div class="topbar">
+        <div class="toggle" style="cursor: pointer;" onclick="toggleMenu();"></div>
+        <div class="heading">
+          <h3>My Dashboard</h3>
+        </div>
+        <div class="user">
+          <img src="images/user.png">
+        </div>
+      </div>
+      <div id="profile" class="wrapper">
+        <div class="left">
+          <img src="images/user1.png" alt="user" width="100">
+          <h4> USER </h4>
+          <p>Profile details</p>
+          <!-- <i class="fa fa-edit icons"></i> -->
+        </div>
+        <div class="right">
+          <div class="info">
+            <h3>User Information</h3>
+            <div class="info_data">
+              <div class="data">
+                <h4>First Name</h4>
+                <p style="text-transform: uppercase;">
+                  <%= username%>
+                </p>
+              </div>
+              <div class="data">
+                <h4>Residential Address</h4>
+                <p style="text-transform: uppercase;">
+                  <%= address%>
+                </p>
+              </div>
+              <div class="data">
+                <h4>Email</h4>
+                <p>
+                  <%= email%>
+                </p>
+              </div>
+              <div class="data">
+                <h4>Phone</h4>
+                <p>
+                  <%= mobile%>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function toggleMenu() {
+      let toggle = document.querySelector('.toggle');
+      let navigation = document.querySelector('.navigation');
+      let main = document.querySelector('.main');
+      toggle.classList.toggle('active');
+      navigation.classList.toggle('active');
+      main.classList.toggle('active');
+    }
+  </script>
 </body>
 
 </html>

@@ -19,7 +19,7 @@ const shoes = [
     name: "Sneakers",
     imageUrl: "https://media.istockphoto.com/photos/sneakers-with-clipping-path-picture-id175537625?b=1&k=20&m=175537625&s=170667a&w=0&h=3ayXmgvGE3zsRn2v4jJffLzyk3iyDsyqbTlrSVJxmu4=",
     description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia quos eius dignissimos aliquam quo, quasi inventore perspiciatis cum itaque obcaecati deserunt fugit officia sed nesciunt repellendus harum doloremque molestias pariatur!",
-    price: 1000,
+    price: 799,
     counterInStock: 30
   },
 
